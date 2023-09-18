@@ -1,0 +1,210 @@
+# DOCKER NOTES
+
+---
+# A. Installation
+- Main source : https://docs.docker.com/desktop/
+- Please install based on the specifications of the computer you are using.
+- If the computer version you are using does not meet the minimum requirements from the official source, you can still install docker with Docker Toolbox. 
+- For more information about Docker Toolbox, please read [source 1](https://www.upwork.com/resources/docker-toolbox) and [source 2](https://nickjanetakis.com/blog/should-you-use-the-docker-toolbox-or-docker-for-mac-windows).
+- To verify installation, open Commnd Prompt or Terminal, and type `docker`. If the installation is successful, a list of Docker commands will appear.
+
+---
+# B. Tutorial
+You can use some of the sources below to learn more about Docker :
+1. [Docker 101 Tutorial](https://www.docker.com/101-tutorial/)
+   
+2. [Docker-curriculum.com](https://docker-curriculum.com/)
+
+---
+# C. Syntax
+## C.1 - Basic Syntax
+1. Get list of Docker command
+   ```
+   $ docker
+   ```
+
+2. Check Docker version
+   ```
+   $ docker --version
+   ```
+
+3. Run a Docker Image from DockerHub
+   ```
+   $ docker run hello-world
+   
+   try this too
+   $ docker run hello-seattle
+   ```
+
+## C.2 - Docker Image
+4. Build a Docker Image from Dockerfile
+   ```
+   Syntax  : $ docker build -t <app-name>:<tag> .
+   
+   Example : $ docker build -t my-game:v0.0.1 .
+   ```
+
+5. Change tag of a Docker Image
+   ```
+   Syntax  : $ docker tag <app-name>:<old-tag> <app-name>:<new-tag>
+
+   Example : $ docker tag my-game:v0.0.1 my-game:v0.0.2
+   ```
+
+6. Run a Docker Image
+   ```
+   Syntax  : $ docker run [options] <app-name>:<tag>
+   Example : $ docker run -it my-game:v0.0.1
+   ```
+   For more details about `docker run` or `[options]`, please visit [the official documentation](https://docs.docker.com/engine/reference/run/).
+
+7. List all Docker Images
+   ```
+   Syntax : $ docker images
+   ```
+
+## C.3 - Docker Container
+
+
+8. List all Docker Container
+   ```
+   Syntax : $ docker ps -a
+   ```
+
+9. Run existing container
+   ```
+   Syntax    : $ docker start [options] <container-name or container-id>
+   Example 1 : $ docker start -ai quizzical_hawking
+   Example 2 : $ docker start -ai fd1a7b37a93e
+   ```
+
+10. Check CPU & memory usage
+    ```
+    Syntax : $ docker stats
+    ```
+
+11. Check disk space usage
+    ```
+    Syntax : $ docker system df
+    ```
+
+12. Delete a Docker Container
+    ```
+    Syntax    : $ docker rm <container-name or container-id>
+    Example 1 : $ docker rm quizzical_hawking
+    Example 2 : $ docker rm fd1a7b37a93e
+    ```
+
+13. Delete all Docker Containers
+    ```
+    Syntax : $ docker rm $(docker ps -aq)
+    ```
+
+14. Delete a Docker Image
+    ```
+    Syntax  : $ docker rmi <image-id> or $ docker rmi <image-name>:<tag>
+    Example 1 : $ docker rmi afa783ad460f
+    Example 2 : $ docker rmi my-game:v0.0.1
+    ```
+
+15. Delete all Docker Images
+    ```
+    Syntax : $ docker rmi -f $(docker images -q)
+    ```
+---
+# D. Push to DockerHub
+1. Login to DockerHub
+   ```
+   Syntax : $ docker login
+   ```
+
+2. Create tag between image that you want to push and repository in DockerHub
+   ```
+   Syntax  : $ docker tag <image-id> <dockerhub-username/image-name/tag>
+   Example : $ docker tag afa783ad460f danusogipurnomo/my-game:v0.0.1
+   ```
+   
+3. Push to Docker Hub
+   ```
+   Syntax  : $ docker push <dockerhub-username/image-name/tag>
+   Example : $ docker push danusogipurnomo/my-game:v0.0.1
+   ```
+
+4. If you experience an error like the following :
+   ```
+   denied: requested access to the resource is denied
+   ```
+   
+   log out first with the syntax below then repeat step 1 to step 3
+   ```
+   Syntax : $ docker logout
+   ```
+
+5. To test the image that has been pushed
+   *Make sure that on your computer there are no more images that are the same as the image you just pushed*
+   ```
+   Syntax  : $ docker run [options] <dockerhub-username/image-name/tag>
+   Example : $ docker run -it danusogipurnomo/my-game:v0.0.1
+   ```
+---
+# E. Docker Compose
+
+Please read these sources to get more about Docker Compose : 
+- [Docker Compose](https://colab.research.google.com/corgiredirector?site=https%3A%2F%2Fdocs.docker.com%2Fcompose%2Fcompose-file%2F)
+- [History of Docker Compose](https://colab.research.google.com/corgiredirector?site=https%3A%2F%2Fdocs.docker.com%2Fcompose%2Fhistory%2F)
+- [Compose File V3](https://colab.research.google.com/corgiredirector?site=https%3A%2F%2Fdocs.docker.com%2Fcompose%2Fcompose-file%2Fcompose-file-v3%2F)
+
+1. Run a Docker Image without using Docker Compose with specific CPU size and memory limits
+   ```
+   Syntax  : $ docker run [options] <app-name><tag>
+   Example : $ docker run -it --cpus=1 --memory=500M my-game:v0.0.1
+   ```
+
+2. Build a Docker Image with Docker Compose
+   ```
+   Syntax  : $ docker-compose build
+   ```
+
+3. Run a Docker Image with Docker Compose
+   ```
+   Syntax  : $ docker-compose run <service-name>
+   Example : $ docker-compose run my-game-compose
+   ```
+
+4. Build & run with Docker Compose
+   ```
+   Syntax  : $ docker-compose up
+   
+   After you finish, you must write 
+   $ docker-compose down
+   ```
+
+5. Run docker-compose without default filename
+   ```
+   Syntax  : $ docker-compose -f <filename> up
+   Example : $ docker-compose -f my-compose.yml up
+   ```
+
+---
+# F. Phase 2 Tools
+
+Make sure you have cloned this [repository](https://github.com/ardhiraka/DEBlitz).
+
+## F.1 - Kibana & Elastic
+1. Open Command Prompt or Terminal.
+
+2. Change directory to `DEBlitz/compose_file/`.
+
+3. Run the following command : 
+   ```
+   Syntax : $ docker-compose -f elastic-kibana.yml up
+   ```
+   Let this command prompt run and open to use Kibana & Elastic.
+
+4. To see Kibana : 
+   - Open your browser
+   - Write : `localhost:5601` in your browser tab
+
+5. To check Elastic : 
+   - You can open new tab in Command Prompt or Terminal and then write : `$ curl http://localhost:9200/_cluster/health?pretty` OR
+   - Open in new browser tab : `http://localhost:5601/status#?_g=()`
