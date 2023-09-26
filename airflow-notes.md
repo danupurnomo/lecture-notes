@@ -46,3 +46,7 @@ $  pip install apache-airflow-providers-postgres==5.4.0
    engine = create_engine('postgresql+psycopg2://airflow:airflow@postgres/airflow')
    pd.read_sql('SELECT * FROM experiments', engine)
    ```
+
+5. Keluar dari Python, ketikkan `$ exit()`.
+
+6. Keluar dari Docker Container, ketikkan '$ exit`.
