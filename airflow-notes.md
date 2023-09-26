@@ -49,4 +49,4 @@ $  pip install apache-airflow-providers-postgres==5.4.0
 
 5. Keluar dari Python, ketikkan `$ exit()`.
 
-6. Keluar dari Docker Container, ketikkan '$ exit`.
+6. Keluar dari Docker Container, ketikkan `$ exit`.
