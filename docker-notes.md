@@ -167,6 +167,13 @@ Make sure you have cloned this [repository](https://github.com/ardhiraka/DEBlitz
    - Elasticsearch : Type `localhost:9200` in your browser tab
    - Kibana : Type `localhost:5601` in your browser tab
 
+5. To close the apps :
+   - Open Command Prompt or Terminal and change directory to `DEBlitz/compose_file/`.
+   - Run the following command in Command Prompt or Terminal
+     ```
+     Syntax : $ docker-compose -f elastic-kibana.yml down
+     ```
+
 ## E.2 - Apache Airflow
 1. Open Command Prompt or Terminal.
 
@@ -179,3 +186,10 @@ Make sure you have cloned this [repository](https://github.com/ardhiraka/DEBlitz
 
 4. Check apps :
    - Open your browser and type `localhost:8080` in your browser tab
+
+5. To close the apps :
+   - Open Command Prompt or Terminal and change directory to `DEBlitz/MLPipeline/`.
+   - Run the following command in Command Prompt or Terminal
+     ```
+     Syntax : $ docker-compose -f airflow_lite.yml down
+     ```
