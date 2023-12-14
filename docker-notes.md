@@ -147,64 +147,35 @@ You can use some of the sources below to learn more about Docker :
    Example : $ docker run -it danusogipurnomo/my-game:v0.0.1
    ```
 ---
-# E. Docker Compose
-
-Please read these sources to get more about Docker Compose : 
-- [Docker Compose](https://colab.research.google.com/corgiredirector?site=https%3A%2F%2Fdocs.docker.com%2Fcompose%2Fcompose-file%2F)
-- [History of Docker Compose](https://colab.research.google.com/corgiredirector?site=https%3A%2F%2Fdocs.docker.com%2Fcompose%2Fhistory%2F)
-- [Compose File V3](https://colab.research.google.com/corgiredirector?site=https%3A%2F%2Fdocs.docker.com%2Fcompose%2Fcompose-file%2Fcompose-file-v3%2F)
-
-1. Run a Docker Image without using Docker Compose with specific CPU size and memory limits
-   ```
-   Syntax  : $ docker run [options] <app-name><tag>
-   Example : $ docker run -it --cpus=1 --memory=500M my-game:v0.0.1
-   ```
-
-2. Build a Docker Image with Docker Compose
-   ```
-   Syntax  : $ docker-compose build
-   ```
-
-3. Run a Docker Image with Docker Compose
-   ```
-   Syntax  : $ docker-compose run <service-name>
-   Example : $ docker-compose run my-game-compose
-   ```
-
-4. Build & run with Docker Compose
-   ```
-   Syntax  : $ docker-compose up
-   
-   After you finish, you must write 
-   $ docker-compose down
-   ```
-
-5. Run docker-compose without default filename
-   ```
-   Syntax  : $ docker-compose -f <filename> up
-   Example : $ docker-compose -f my-compose.yml up
-   ```
-
----
-# F. Phase 2 Tools
+# E. Phase 2 Tools
 
 Make sure you have cloned this [repository](https://github.com/ardhiraka/DEBlitz).
 
-## F.1 - Kibana & Elastic
+## E.1 - Kibana & Elastic
 1. Open Command Prompt or Terminal.
 
 2. Change directory to `DEBlitz/compose_file/`.
 
-3. Run the following command : 
+3. Run file `elastic-kibana.yml` with command :  
    ```
    Syntax : $ docker-compose -f elastic-kibana.yml up
    ```
    Let this command prompt run and open to use Kibana & Elastic.
 
-4. To see Kibana : 
+4. Check apps :
    - Open your browser
-   - Write : `localhost:5601` in your browser tab
+   - Elasticsearch : Type `localhost:9200` in your browser tab
+   - Kibana : Type `localhost:5601` in your browser tab
 
-5. To check Elastic : 
-   - You can open new tab in Command Prompt or Terminal and then write : `$ curl http://localhost:9200/_cluster/health?pretty` OR
-   - Open in new browser tab : `http://localhost:5601/status#?_g=()`
+## E.2 - Apache Airflow
+1. Open Command Prompt or Terminal.
+
+2. Change directory to `DEBlitz/MLPipeline/`.
+
+3. Run file `airflow_lite.yml` with command :  
+   ```
+   Syntax : $ docker-compose -f airflow_lite.yml up
+   ```
+
+4. Check apps :
+   - Open your browser and type `localhost:8080` in your browser tab
