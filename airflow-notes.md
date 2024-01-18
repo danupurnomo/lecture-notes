@@ -1,4 +1,32 @@
-# Airflow Notes
+# AIRFLOW NOTES
+
+Make sure you have cloned this [repository](https://github.com/ardhiraka/DEBlitz). 
+
+For the Apache Airflow class (Week 2 - Day 1 PM), the docker compose that will be used is on the  `DEBlitz/MLPipeline/airflow_lite.yaml` path.
+
+## A - Setup
+
+1. Open Command Prompt or Terminal.
+
+2. Change directory to `DEBlitz/MLPipeline/`.
+
+3. Run file `airflow_lite.yml` with command :  
+   ```sh
+   docker-compose -f airflow_lite.yml up
+   ```
+4. Wait until `airflow-scheduler`, `airflow-webserver`, and `postgres` show green status as shown in the image below. **It takes some time for these three to turn green.** Therefore, please be patient and wait.
+
+5. Check apps :
+   - Open your browser and type `localhost:8080` in your browser tab
+
+5. To close the apps :
+   - Open Command Prompt or Terminal and change directory to `DEBlitz/MLPipeline/`.
+   - Run the following command in Command Prompt or Terminal
+     ```
+     Syntax : $ docker-compose -f airflow_lite.yml down
+     ```
+
+
 
 ---
 ## A. Docker-Compose
