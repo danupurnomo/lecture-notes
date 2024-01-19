@@ -47,7 +47,7 @@ For the Apache Airflow class (Week 2 - Day 1 PM), the docker compose that will b
 
 3. Run file `airflow_lite.yml` with command :  
    ```sh
-   docker-compose -f airflow_lite.yml up
+   docker-compose -f airflow_lite.yaml up
    ```
 
 4. Wait until `airflow-scheduler`, `airflow-webserver`, and `postgres` show green status as shown in the image below. ![plot](image/airflow/01%20-%20Setup.png) **It takes some time for these three to turn green.** Therefore, please be patient and wait.
@@ -68,5 +68,5 @@ To close the app :
 
 3. Run file `airflow_lite.yml` with command :  
    ```sh
-   docker-compose -f airflow_lite.yml down
+   docker-compose -f airflow_lite.yaml down
    ```
