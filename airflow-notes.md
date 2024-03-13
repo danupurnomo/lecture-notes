@@ -7,7 +7,7 @@
 
 2. Make sure that the Docker and PostgreSQL applications are installed on your computer
 
-3. You need Python 3.9 or Python 3.10 to proceed the next steps. If you have Python 3.11, create another Python environment with Python 3.9 or Python 3.10 (Python 3.9 is recommended).
+3. **It is highly recommended to use Python 3.9 or Python 3.10.** If you have Python 3.11, create another Python environment with Python 3.9 or Python 3.10 (Python 3.9 is recommended).
 
 4. Install the following packages : 
    * For Python 3.9
@@ -17,7 +17,7 @@
      pip install apache-airflow-providers-postgres --constraint https://raw.githubusercontent.com/apache/airflow/constraints-2.3.4/constraints-3.9.txt
      ```
      
-     If you encounter an error while installing the `apache-airflow-providers-postgres`` package, then install the following package.
+     If you encounter an error while installing the `apache-airflow-providers-postgres` package, then install the following package.
      ```py
      pip install apache-airflow-providers-postgres==5.4.0
      ```
