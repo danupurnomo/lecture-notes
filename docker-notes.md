@@ -146,30 +146,3 @@ You can use some of the sources below to learn more about Docker :
    Syntax  : $ docker run [options] <dockerhub-username/image-name/tag>
    Example : $ docker run -it danusogipurnomo/my-game:v0.0.1
    ```
----
-# E. Phase 2 Tools
-
-Make sure you have cloned this [repository](https://github.com/ardhiraka/DEBlitz).
-
-## E.1 - Kibana & Elastic
-1. Open Command Prompt or Terminal.
-
-2. Change directory to `DEBlitz/compose_file/`.
-
-3. Run file `elastic-kibana.yml` with command :  
-   ```
-   Syntax : $ docker-compose -f elastic-kibana.yml up
-   ```
-   Let this command prompt run and open to use Kibana & Elastic.
-
-4. Check apps :
-   - Open your browser
-   - Elasticsearch : Type `localhost:9200` in your browser tab
-   - Kibana : Type `localhost:5601` in your browser tab
-
-5. To close the apps :
-   - Open Command Prompt or Terminal and change directory to `DEBlitz/compose_file/`.
-   - Run the following command in Command Prompt or Terminal
-     ```
-     Syntax : $ docker-compose -f elastic-kibana.yml down
-     ```
