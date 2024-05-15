@@ -108,9 +108,9 @@
 7. Check apps :
    - Open your browser
    - For **Elasticsearch**, type `http://localhost:9200` in your browser tab
-     ![plot](image/elastic-kibana/elasticsearch.png)
+     ![plot](image/elastic-kibana/elasticsearch-7.13.png)
    - For **Kibana**, type `http://localhost:5601` in your browser tab
-     ![plot](image/elastic-kibana/kibana.png)
+     ![plot](image/elastic-kibana/kibana-7.13.png)
 
 8. To close the apps :
    - Open Command Prompt or Terminal and change directory to `DEBlitz/compose_file/`.
