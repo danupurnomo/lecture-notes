@@ -20,89 +20,99 @@
 ---
 ## B. Setup
 
-### B.1 For Non Apple M1/M2 Computer
-1. Open Command Prompt or Terminal.
-
-2. Change directory to `DEBlitz/compose_file/`.
-
-3. Run file `elastic-kibana.yml` with command :  
-   ```py
-   docker-compose -f elastic-kibana.yml up
-   ```
-   Let this command prompt run and open to use Kibana & Elastic.
-
-4. Check apps :
-   - Open your browser
-   - For **Elasticsearch**, type `http://localhost:9200` in your browser tab
-     ![plot](image/elastic-kibana/elasticsearch.png)
-   - For **Kibana**, type `http://localhost:5601` in your browser tab
-     ![plot](image/elastic-kibana/kibana.png)
-
-5. To close the apps :
-   - Open Command Prompt or Terminal and change directory to `DEBlitz/compose_file/`.
-   - Run the following command in Command Prompt or Terminal
-     ```py
-     docker-compose -f elastic-kibana.yml down
-     ```
-
-### B.2 For Apple M1/M2 Computer
 1. Open file `DEBlitz/compose_file/elastic-kibana.yml`.
 
-2. Change the following lines : 
-   * Elasticsearch version
-
-     **BEFORE**
-      ```yml
-      version: "3.3"
-      services:
-         elasticsearch:
-            image: docker.elastic.co/elasticsearch/elasticsearch:7.4.0
-            container_name: elasticsearch
-      ```
-
-      **AFTER**
-      ```yml
-      version: "3.3"
-      services:
-         elasticsearch:
-            image: docker.elastic.co/elasticsearch/elasticsearch:7.13.0-arm64
-            container_name: elasticsearch
-      ```
+2. Change the following lines :
+   * **For Non Apple M1/M2/M3 Computer**
+     * Elasticsearch version
    
-   * Kibana version
+        **BEFORE**
+         ```yml
+         version: "3.3"
+         services:
+            elasticsearch:
+               image: docker.elastic.co/elasticsearch/elasticsearch:7.4.0
+               container_name: elasticsearch
+         ```
 
-     **BEFORE**
-      ```yml
-      kibana:
-         container_name: kibana
-         image: docker.elastic.co/kibana/kibana:7.4.0
-      ```
+         **AFTER**
+         ```yml
+         version: "3.3"
+         services:
+            elasticsearch:
+               image: docker.elastic.co/elasticsearch/elasticsearch:7.13.0
+               container_name: elasticsearch
+         ```
+      
+      * Kibana version
+   
+        **BEFORE**
+         ```yml
+         kibana:
+            container_name: kibana
+            image: docker.elastic.co/kibana/kibana:7.4.0
+         ```
+   
+         **AFTER**
+         ```yml
+         kibana:
+            container_name: kibana
+            image: docker.elastic.co/kibana/kibana:7.13.0
+         ```
+   * **For Apple M1/M2/M3 Computer**
+     * Elasticsearch version
+   
+        **BEFORE**
+         ```yml
+         version: "3.3"
+         services:
+            elasticsearch:
+               image: docker.elastic.co/elasticsearch/elasticsearch:7.4.0
+               container_name: elasticsearch
+         ```
 
-      **AFTER**
-      ```yml
-      kibana:
-         container_name: kibana
-         image: docker.elastic.co/kibana/kibana:7.13.0-arm64
-      ```
+         **AFTER**
+         ```yml
+         version: "3.3"
+         services:
+            elasticsearch:
+               image: docker.elastic.co/elasticsearch/elasticsearch:7.13.0-arm64
+               container_name: elasticsearch
+         ```
+      
+      * Kibana version
+   
+        **BEFORE**
+         ```yml
+         kibana:
+            container_name: kibana
+            image: docker.elastic.co/kibana/kibana:7.4.0
+         ```
+   
+         **AFTER**
+         ```yml
+         kibana:
+            container_name: kibana
+            image: docker.elastic.co/kibana/kibana:7.13.0-arm64
+         ```
+4. Open Command Prompt or Terminal.
 
-3. Open Command Prompt or Terminal.
+5. Change directory to `DEBlitz/compose_file/`.
 
-4. Change directory to `DEBlitz/compose_file/`.
-
-5. Run file `elastic-kibana.yml` with command :  
+6. Run file `elastic-kibana.yml` with command :  
    ```py
    docker-compose -f elastic-kibana.yml up
    ```
    Let this command prompt run and open to use Kibana & Elastic.
 
-6. Check apps :
+7. Check apps :
    - Open your browser
    - For **Elasticsearch**, type `http://localhost:9200` in your browser tab
      ![plot](image/elastic-kibana/elasticsearch.png)
    - For **Kibana**, type `http://localhost:5601` in your browser tab
      ![plot](image/elastic-kibana/kibana.png)
 
-7. To close the apps :
+8. To close the apps :
    - Open Command Prompt or Terminal and change directory to `DEBlitz/compose_file/`.
    - Run the following command in Command Prompt or Terminal
      ```py
