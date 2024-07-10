@@ -9,20 +9,24 @@
 
 3. **It is highly recommended to use Python 3.9 or Python 3.10.** If you have Python 3.11, create another Python environment with Python 3.9 or Python 3.10 (Python 3.9 is recommended).
 
-4. Install the following packages : 
+4. **Use the same Python environment to run Apache Airflow, Elasticsearch, and Kibana**.
+
+5. Install the following packages : 
    ```py
    pip install "elasticsearch<7.14"
    pip install faker
    ```
 
-5. Make sure the above packages are installed succesfully before you run docker-compose of Elasticsearch and Airflow.
+6. Make sure the above packages are installed succesfully before you run docker-compose of Elasticsearch and Airflow.
 
 ---
 ## B. Setup
 
-1. Open file `DEBlitz/compose_file/elastic-kibana.yml`.
+1. Open Docker Desktop.
 
-2. Change the following lines :
+2. Open file `DEBlitz/compose_file/elastic-kibana.yml`.
+
+3. Change the following lines :
    * **For Non Apple M1/M2/M3 Computer**
      * Elasticsearch version
    
