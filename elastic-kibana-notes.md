@@ -7,7 +7,12 @@
 
 2. Make sure that the Docker and PostgreSQL applications are installed on your computer
 
-3. **It is highly recommended to use Python 3.9 or Python 3.10.** If you have Python 3.11, create another Python environment with Python 3.9 or Python 3.10 (Python 3.9 is recommended).
+3. **It is highly recommended to use Python 3.9 or Python 3.10.** If you have Python 3.11, create another Python environment with Python 3.9 or Python 3.10 (Python 3.9 is recommended). Example of how to create a new Python's environment with Anaconda.
+
+   *The syntax below will create a new environment named `env_py39`. You can change the name of this environment according to your preference.*
+   ```sh
+   conda create -n env_py39 python=3.9
+   ```
 
 4. **Use the same Python environment to run Apache Airflow, Elasticsearch, and Kibana**.
 
@@ -15,6 +20,8 @@
    ```py
    pip install "elasticsearch<7.14"
    pip install faker
+   pip install --upgrade "numpy<2.0"
+   pip install --upgrade "pandas<2.0.0"
    ```
 
 6. Make sure the above packages are installed succesfully before you run docker-compose of Elasticsearch and Airflow.
