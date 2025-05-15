@@ -1,4 +1,4 @@
-# ELASTICSEARCH & KIBANA NOTES
+# WEEK 2 TOOLS NOTES
 
 ---
 ## A. Requirements
