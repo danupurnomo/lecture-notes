@@ -161,5 +161,5 @@ For the Apache Airflow class (Week 2 - Day 1 PM), the docker compose that will b
     - If the previous steps above cannot be done then open Command Prompt or Terminal and navigate to `DEBlitz/MLPipeline/` directory.
     - Run the following command :
         ```py
-        docker-compose -f airflow_lite.yml down
+        docker-compose -f airflow_lite.yaml down
         ```
